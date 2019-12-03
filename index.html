@@ -1,0 +1,444 @@
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Global Mental Health</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!-- Load Leaflet from CDN -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/> -->
+
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@2.2.4/dist/esri-leaflet.js"
+    integrity="sha512-tyPum7h2h36X52O2gz+Pe8z/3l+Y9S1yEUscbVs5r5aEY5dFmP1WWRY/WLLElnFHa+k1JBQZSCDGwEAnm2IxAQ=="
+    crossorigin=""></script>
+
+
+    <!-- <script src="https://d3js.org/d3-scale-chromatic.v0.3.js"></script> -->
+
+
+
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" > -->
+    <!-- <link rel="stylesheet" href="assets/vender/intl-tel-input/css/intlTelInput.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Coustard|Oswald|Roboto|Questrial" rel="stylesheet">
+
+</head>
+
+<body id="body-bootstrap-overrides">
+  <!-- Collapse button -->
+
+    <nav>
+
+        <ul id="mainNav">
+          <li class="active"><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#world">Map</a></li>
+          <li><a href="#research">Correlates & Treatment</a></li>
+          <li><a href="#contact">Contact & More</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+
+    </nav>
+
+    <section id="home">
+
+      <div class="slideshow-container">
+        <div class="mySlides fade-overrides">
+          <img src="img/intro_1.jpg" style="width:100%">
+          <div class="text">Around 1-in-7 people <b><font color="#43AB9B">globally</font></b> have one or more <b><font color="#43AB9B">mental</font></b> or substance use <b><font color="#43AB9B">disorders</font></b>.<sup>1</sup></div>
+        </div>
+
+        <div class="mySlides fade-overrides">
+          <img src="img/intro_2.JPG" style="width:100%">
+          <div class="text">So let's <b><font color="#43AB9B">talk</font></b> about it, bring <b><font color="#43AB9B">awareness</font></b>, and fight the <b><font color="#43AB9B">stigma</font></b>. </div>
+        </div>
+
+        <div class="mySlides fade-overrides">
+          <img src="img/intro_3.jpeg" style="width:100%">
+          <div class="text">So <b><font color="#43AB9B">people</font></b> with mental illnesses can get the <b><font color="#43AB9B">help</font></b> they need no matter what it <b><font color="#43AB9B">takes</font></b>.</div>
+        </div>
+        <div class="mySlides  fade-overrides">
+          <img src="img/intro_4.jpg" style="width:100%">
+          <div class="text">Because recovery is <b><font color="#43AB9B">worth</font></b> it.</div>
+        </div>
+      </div>
+
+      <br>
+      <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+    </section>
+    <section id="about">
+      <!-- <div id= "about-container-who"></div> -->
+      <div id= "about-container">
+              <div id= "about-container-who">The World Health Organization synthesize the potential
+                 contributors to mental health and well-being into three categories.<sup>2</sup>
+              </div>
+        <div class="text-about">
+          <b>Good</b> mental health is related to mental and psychological well-being.
+          Let's work to <b>improve</b> the mental health of individuals and society at
+          large and include the <b>promotion</b> of mental well-being, the <b>prevention</b> of mental disorders,
+          the <b>protection</b> of human rights and the <b>care</b> of people affected by mental disorders <b>everyday</b>.
+        </div>
+      </div>
+
+    <div id= "about-container2">
+      <div class="row-image">
+        <div class="column-image">
+          <figure>
+          <img id= "attributes" src="img/attributes.jpg" alt="Individual Attributes" style="width:70%">
+          <figcaption class="caption1">Individual attributes and behaviours: <br>these can be particular genetic factors or personality traits</figcaption>
+          </figure>
+          <div id="myModal" class="modal">
+            <span class="close-overrides">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+          </div>
+        </div>
+      <div class="column-image">
+        <figure>
+        <img id="social" src="img/social.jpg" alt="Social and Economic Circumstances" style="width:80%">
+        <figcaption class="caption2">Social and economic circumstances</figcaption>
+        </figure>
+        <div id="myModal" class="modal">
+          <span class="close-overrides">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
+      </div>
+      <div class="column-image">
+        <figure>
+        <img id="environmental" src="img/environmental.jpg" alt="Environmental Factors" style="width:60%">
+        <figcaption class="caption3">Environmental factors</figcaption>
+        </figure>
+        <div id="myModal" class="modal">
+          <span class="close-overrides">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </section>
+
+    <section id="world">
+      <div id="map" class="sidebar-map"></div>
+      <div id= "bar">
+        <div class='dropdown'>
+          <select id="select" onchange="updateMap()">
+                <option disabled selected>Select Disorder</option>
+                <option value="depression">Depression</option>
+                <option value="anxiety_disorders">Anxiety Disorders</option>
+                <option value="bipolar_disorder">Bipolar Disorder</option>
+                <option value="eating_disorders">Eating Disorders</option>
+                <option value="schizophrenia">Schizophrenia</option>
+                <option value="substance_disorders">Substance Disorders</option>
+
+            </select>
+        </div>
+    </section>
+
+    <section id="research">
+      <div class="w3-content w3-display-container">
+        <!-- Slide1 -->
+        <div class="mySlides2" style="width:100%">
+          <div id="charts">
+            <h4 id="pie-chart-title"><b>Pooled relative risk (95% UI)</b></h4>
+          </div>
+          <div id="suicide">
+              <div class="text-suicide">
+                <h2><b>Link between mental health and suicide</b></h2>
+                <br>
+                 The link between mental health and substance use disorders and suicide is well-documented. It is however true that not all
+                 suicides – or suicide attempts – are attributed to underlying mental health or substance use disorders. According to the
+                 Institute for Health Metrics and Evaluation (IHME), and Global Burden of Disease there is not a direct relationship between mental
+                 health prevalence and suicide rates.<sup>3</sup>
+                <br>
+                <br>
+                Although the total prevalence of mental health and substance use disorders
+                does not show a direct relationship to suicide rates, there are notable links between specific types of mental health disorders and suicide.
+                In a meta-study of the mental health-suicide relationship, the study assesses the pooled relative risk of suicide across
+                a range of mental health and substance use disorders. This represents the increased risk of suicide for those
+                with a particular mental health or substance use disorder.<sup>3</sup>
+                <br>
+                <br>
+                The chart on the right represents estimates of the increased risk of suicide for an individual with one of the
+                following disorders. An individual with depression, for example, is 20 times more likely to die from suicide
+                than someone without; some with anxiety disorder around 3 times; schizophrenia around 13 times; bipolar disorder 6 times;
+                and anorexia 8 times as likely.
+              </div>
+            </div>
+        </div>
+        <!-- Slide2 -->
+        <div class="mySlides2" style="width:100%">
+          <div id="economic">
+            <h3 id="bar-graph-title">Depression prevalence by level of education & employment, 2014</h3>
+          </div>
+          <div id="economic-text">
+            <div id="economic-text2">
+              <h2><b>Depression by education level & employment status</b></h2>
+              <br>
+              Categories in the chart have been categorized by education level and whether groups are employed,
+              actively seeking employment, and the total of employed, active and unemployed. Across most countries (which you can explore by changing the
+              the country) we tend to see the lowest prevalence in depression amongst those with tertiary (postsecondary) education;
+              and highest prevalence in those who did not reach upper secondary education.
+              <br>
+              <br>
+              It is also notable that the large differences in education level close or disappear when we look only at the sub-group of those employed.
+              Overall, the prevalence of depression appears to be lower in individuals in employment relative to those actively seeking employment,
+              or the total population which also includes the unemployed.<sup>4</sup>
+            </div>
+            <div id="economic-text3">
+              Chart Description: Share of adults aged 25-64 years old who reported having depression in large-scale survey analysis. This is
+              differentiated by level of education, and within further disaggregated by employment status, ranging from employed to
+              active (actively seeking employment) and total, which includes the total population whether employed or unemployed.<sup>4</sup>
+            </div>
+          </div>
+        </div>
+        <!-- Slide3 -->
+        <div class="mySlides2" style="width:100%">
+
+          <div id="substance-graph">
+
+            <div id="substance">
+              <h3 id="substance-graph-title">Mental health as a risk factor for illicit drug dependency or abuse, 2010</h3>
+            </div>
+            <div id="substance-graph-description">
+              Increased risk of developing an illicit drug dependency or abuse disorder in individuals with a given mental health
+              disorder, relative to those without. A value of 3.9 for PTSD, for example, would indicate that individuals with PTSD are
+              3.9 times as likely to develop drug dependency relative to those without.<sup>5</sup>
+            </div>
+
+          </div>
+
+          <div id="substance-text">
+            <h2><b>Mental health as a risk factor for substance abuse</b></h2>
+              <br>
+            Mental health is known to be an important risk factor for the development of substance use disorders (either in the form of alcohol or illicit drug dependencies).
+            The increased risk of a substance use disorder varies by mental health disorder type:
+            <br>
+            <br>
+
+            <ul>
+              <li>for alcohol dependency the risk is highest in individuals with intermittent explosive disorder, dysthymia, ODD, bipolar disorder and social phobia.<sup>4</sup></li>
+            </ul>
+            <br>
+            <ul>
+              <li>for illicit drug dependency the risk is highest for individuals with intermittent explosive disorder, ADHD, and bipolar disorder. <sup>4</sup></li>
+            </ul>
+            <br>
+            It is known that mental health and substance disorders can be closely related: the IHME often group these disorders together in a collective category
+            when discussing related statistics. However, there is also significant evidence that individual mental health disorders, although to varying degrees,
+            can increase the likelihood of an individual developing a substance use disorder relative to those without.<sup>5</sup>
+
+          </div>
+        </div>
+        <!-- Slide4 -->
+        <div class="mySlides2" style="width:100%">
+          <div id="infograph">
+              <img id="recover" src="img/recovery.png" alt="recovery" style="width:80%;height:80%;">
+          </div>
+            <div id="recovery">
+                  <div class="recovery-text">
+                    <h2><b>Mental health treatment</b></h2>
+                    <br>
+                    There are a number of options for mental health treatment and recovery — choice of treatment and its effectiveness will be specific
+                    to a number of factors including the mental health disorder, its severity, previous treatment and the individual. There is not a single
+                    ‘best approach’ to treatment.
+                    <br>
+                    <br>
+                    When people are directly involved in designing their own treatment plan, including defining recovery and wellness goals, choosing services
+                    that support them and evaluating treatment decisions and progress , the experience of care and outcomes are improved
+                    <br>
+                    <br>
+                    There are many tools that can improve the experience on the road to wellness: medication, counseling (therapy), social support and education.
+                    Therapy, for example, can take many forms, from learning relaxation skills to intensively reworking your thinking patterns. Social support,
+                    acceptance and encouragement from friends, family and others can also make a difference. Education about how to manage a mental health condition
+                    along with other medical conditions can provide the skills and supports to enrich the unique journey toward overall recovery and wellness.<sup>6</sup>
+
+                  </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <button  class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;
+        </button>
+        <button  class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;
+        </button>
+      <!-- </div> -->
+
+
+    </section>
+
+    <section id="contact">
+      <footer id="contact">
+      	<div class="container">
+      		<div class="row">
+      			<h2>CONTACT</h2>
+      			<!-- <form role="form" name="insert" id="feedbackForm" data-toggle="validator" data-disable="false" action="insert.php" method="POST"> -->
+            <form role="form" name="insert" id="feedbackForm" data-toggle="validator" data-disable="false">
+      				<div class="form-group">
+      					<label class="control-label" for="name">Name <span>*</span></label>
+      					<div class="input-group">
+      						<input class="form-control" type="name" id="name" name="name" placeholder="Enter your name" required/>
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+      					</div>
+      					<span class="help-block" style="display: none;">Please enter your name.</span>
+      				</div>
+      				<div class="form-group">
+      					<label class="control-label" for="email">Reason for Contact <span>*</span></label>
+      					<select name="reason" class="form-control" required>
+                      <option disabled selected>Select Reason</option>
+                      <option value="inquiry">General Inquiry</option>
+                      <option value="involved">Get Involved</option>
+                      <option value="other">Other</option>
+                    </select>
+      					<span class="help-block" style="display: none;">Please enter a valid e-mail address.</span>
+      				</div>
+      				<div class="form-group">
+      					<label class="control-label" for="email">Email <span>*</span></label>
+      					<div class="input-group">
+      						<input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required/>
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+      					</div>
+      					<span class="help-block" style="display: none;">Please enter a valid e-mail address.</span>
+      				</div>
+      				<div class="form-group">
+      					<label class="control-label" for="message">Message <span>*</span></label>
+      					<div class="input-group">
+      						<textarea rows="5" cols="30" class="form-control" id="message" name="message" placeholder="Enter your message" required></textarea>
+      						<span class="input-group-addon"><i class="glyphicon glyphicon-unchecked form-control-feedback"></i></span>
+      					</div>
+      					<span class="help-block" style="display: none;">Please enter a message.</span>
+      				</div>
+      				<div class="form-group">
+      					<div class="g-recaptcha" data-sitekey="your_site_key"></div>
+      					<span class="help-block" style="display: none;">Please check that you are not a robot.</span>
+      				</div>
+      				<span class="help-block" style="display: none;">Please enter a the security code.</span>
+      				<button type="submit" name="submit" id="feedbackSubmit" class="btn btn-primary btn-lg" data-loading-text="Sending..." style="display: block; margin-top: 10px;">Send</button>
+      			</form>
+      			<br>
+            <div class="row-image2">
+              <div class="column-image2">
+                <a href="http://www.afro.who.int/en/health-topics/topics/4352-mental-health.html" target="_blank">
+                  <img src="img/africa1.JPG" alt="African Region">
+                  <p class="img__description">African Region</p>
+                </a>
+              </div>
+              <div class="column-image2">
+                <a href="https://www.paho.org/hq/index.php?option=com_topics&view=article&id=210&Itemid=40870&lang=en" target="_blank">
+                  <img src="img/pan_americas1.jpg" alt="Region of the Americas" >
+                  <p class="img__description">Region of the Americas</p>
+                </a>
+              </div>
+              <div class="column-image2">
+                <a href="http://www.euro.who.int/en/health-topics/noncommunicable-diseases/mental-health" target="_blank">
+                  <img src="img/europe1.jpg" alt="European Region">
+                  <p class="img__description">European Region</p>
+              </a>
+              </div>
+              <div class="column-image2">
+                <a href="http://www.emro.who.int/mental-health/about/" target="_blank">
+                  <img src="img/eastern_med.jpeg" alt="Eastern Mediterranean Region">
+                  <p class="img__description">Eastern Mediterranean Region</p>
+                </a>
+              </div>
+              <div class="column-image2">
+                <a href="http://www.searo.who.int/entity/mental_health/en/" target="_blank">
+                  <img src="img/south_east_asia1.jpeg" alt="South-East Asia Region">
+                  <p class="img__description">South-East Asia Region</p>
+                </a>
+              </div>
+              <div class="column-image2">
+                <a href="https://www.who.int/westernpacific/health-topics/mental-health" target="_blank">
+                  <img src="img/western_pacific1.jpg" alt="Western Pacific Region">
+                  <p class="img__description">Western Pacific Region</p>
+                </a>
+              </div>
+            </div>
+      			<div class="social">
+      				<!-- <a href="https://codepen.io/shvvffle/" target="_blank"><i class="fa fa-codepen" aria-hidden="true"></i></a>
+      				<a href="https://pt.linkedin.com/in/marinamarques9" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      				<a href="https://github.com/shvvffle" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a> -->
+      			</div>
+
+      		</div>
+      		<!-- end row contact -->
+      	</div>
+      	<!-- end container footer section -->
+      </footer>
+      <!-- end footer -->
+
+    </section>
+    <section id="references">
+      <div id="sources">
+        <h2><b style="margin-left: 45%; color:#008080;">References</b></h2>
+        <br>
+        <br>
+        1. Hannah Ritchie, "Global mental health: five key insights which emerge from the data," Our World in Data. May 16, 2018. https://ourworldindata.org/mental-health#.
+        <br>
+        <br>
+        2. "Risks to mental health: an overview of vulnerabilities and risk factors," World Health Organization.
+        August 27, 2012, https://www.who.int/mental_health/mhgap/risks_to_mental_health_EN_27_08_12.pdf.
+        <br>
+        <br>
+        3. Ferrari et al. "The Burden Attributable to Mental and Substance Use Disorders as Risk Factors for Suicide: Findings from the Global Burden of Disease Study 2010," <i>PLOS ONE</i>,
+          2014, doi:https://doi.org/10.1371/journal.pone.0091936.
+        <br>
+        <br>
+        4. Hannah Ritchie and Max Roser, "Mental Health," Our World in Data. April 2018. https://ourworldindata.org/mental-health#.
+        <br>
+        <br>
+        5. "Drug Use," Our World in Data. Accessed October 12, 2019. https://ourworldindata.org/drug-use#mental-health-disorders-as-a-risk-factor-for-substance-dependency.
+        <br>
+        <br>
+        6. "Mental Health Treatment & Services," National Alliance on Mental Illness, Accessed November 11, 2019. https://www.nami.org/learn-more/treatment.
+
+
+      </div>
+    </section>
+
+
+
+  <script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/legends.js"></script>
+  <script type="text/javascript" src="js/map.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  <script type="text/javascript" src="js/graphs.js"></script>
+
+
+<!-- <script type="text/javascript" src="lib/leaflet.js"></script>
+<script type="text/javascript" src="lib/esri-leaflet.js"></script> -->
+
+</body>
+</html>
